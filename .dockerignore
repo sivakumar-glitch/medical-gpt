@@ -1,0 +1,17 @@
+.git
+.gitignore
+.venv
+node_modules
+frontend
+frontend/.next
+frontend/node_modules
+frontend_backup
+frontend_tmp
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.log
+.env
+.env.*
+backend/data/chat_history
