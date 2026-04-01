@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { streamChat, getConversations, createConversation, updateConversation, deleteConversation, ConversationListItem, Message as APIMessage, transcribeAudio, uploadFile } from '@/lib/api';
+import { streamChat, getConversations, createConversation, updateConversation, deleteConversation, ConversationListItem, Message as APIMessage, transcribeAudio, uploadFile } from '../lib/api';
 import ReactMarkdown from 'react-markdown';
 import LoginForm from './components/LoginForm';
 import ChatHistory from './components/ChatHistory';

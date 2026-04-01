@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Trash2, Edit2, Check, X } from 'lucide-react';
-import { ConversationListItem } from '@/lib/api';
+import { ConversationListItem } from '../../lib/api';
 
 interface ChatHistoryProps {
     conversations: ConversationListItem[];

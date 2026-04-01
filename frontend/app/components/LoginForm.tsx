@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { login } from '@/lib/api';
+import { login } from '../../lib/api';
 
 interface LoginFormProps {
     onLoginSuccess: (token: string) => void;
