@@ -1,4 +1,5 @@
 import os
+from click import Context
 import openai
 from app.core.config import settings
 from typing import AsyncGenerator
@@ -34,7 +35,7 @@ class LLMService:
             else:
                 from openai import AsyncOpenAI
                 client = AsyncOpenAI(api_key=self.api_key)
-                model_name = "gpt-3.5-turbo"
+                model_name = "gpt-4.1"
             
             stream = await client.chat.completions.create(
                 model=model_name,
@@ -51,6 +52,7 @@ class LLMService:
                     if delta and delta.content:
                         yield delta.content
                     
+                    
         except Exception as e:
             error_str = str(e)
             # Handle content filter violations gracefully
@@ -64,7 +66,7 @@ class LLMService:
             elif "insufficient_quota" in error_str or "429" in error_str:
                 yield "\n\n⚠️ **LLM Quota Exceeded**: Falling back to MOCK mode for demonstration.\n\n"
                 yield "The RAG pipeline successfully retrieved context, but your OpenAI account has no credits.\n"
-                yield f"System Prompt Context would have included medical documents relevant to your query.\n\n"
+                yield "Context would have included medical documents relevant to your query.\n\n"
                 yield "Please check your OpenAI billing or provide a different API key in `.env`."
             else:
                 yield f"Sorry, I encountered a technical issue while processing your request. Please try again."

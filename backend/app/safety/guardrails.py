@@ -25,13 +25,31 @@ class SafetyService:
             "hack", "crack", "exploit",  # Injection keywords
         ]
 
+        # Distinguish informational questions from active emergencies.
+        self.info_intent_pattern = re.compile(
+            r"\b(what is|what are|symptom|symptoms|sympto\w*|signs|causes|treatment|treatments|prevention|prevent|explain|information|about)\b",
+            re.IGNORECASE,
+        )
+        self.acute_intent_pattern = re.compile(
+            r"\b(i am|i'm|my|me|right now|currently|sudden|severe|help now|can't breathe|cannot breathe|collapsed|unconscious|fainting)\b",
+            re.IGNORECASE,
+        )
+
     def check_emergency(self, text: str) -> Optional[str]:
         """
         Checks for life-threatening emergencies.
         Returns a specific emergency message if detected, else None.
         """
+        text_lower = text.lower().strip()
         for key, pattern in self.emergency_patterns.items():
             if pattern.search(text):
+                # For informational queries like "symptoms of heart attack",
+                # do not force emergency-only output.
+                if key == "heart_attack":
+                    is_info = bool(self.info_intent_pattern.search(text_lower))
+                    is_acute = bool(self.acute_intent_pattern.search(text_lower))
+                    if is_info and not is_acute:
+                        return None
                 if key == "suicide":
                     return "EMERGENCY: If you or someone else is in immediate danger or suspect suicidal tendencies, please call 911 or your local emergency number immediately. You can also call the National Suicide Prevention Lifeline at 988."
                 elif key == "heart_attack":

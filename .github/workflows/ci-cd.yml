@@ -1,0 +1,37 @@
+name: Medical Chatbot CI/CD
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-backend:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r backend/requirements.txt
+    - name: Run tests
+      run: |
+        # pytest backend/tests
+
+  build-and-deploy:
+    needs: test-backend
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Deploy to Vercel (Frontend)
+      # use vercel-action
+      run: echo "Deploying frontend..."
+    - name: Deploy to AWS (Backend)
+      # use ssh-action or similar
+      run: echo "Deploying backend..."

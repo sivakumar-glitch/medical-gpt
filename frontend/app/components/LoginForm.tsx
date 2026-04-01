@@ -22,35 +22,35 @@ export default function LoginForm({ onLoginSuccess }: LoginFormProps) {
             const token = await login(email, password);
             onLoginSuccess(token);
         } catch (err) {
-            setError('Login failed. For admin access, use admin@example.com / admin');
+            setError('Invalid credentials. Use admin@example.com/admin or user@example.com/user.');
         } finally {
             setIsLoading(false);
         }
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-gray-900 text-white">
-            <div className="w-full max-w-md p-8 bg-gray-800 rounded-2xl border border-gray-700 shadow-xl">
-                <h2 className="text-3xl font-bold mb-6 text-center text-blue-400">MedAI Login</h2>
+        <div className="flex flex-col items-center justify-center h-screen bg-slate-50 text-slate-900">
+            <div className="w-full max-w-md p-8 bg-white rounded-2xl border border-slate-200 shadow-xl">
+                <h2 className="text-3xl font-bold mb-6 text-center text-slate-800">MedAI Login</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
-                        <label className="block text-sm font-medium mb-2 text-gray-400">Email</label>
+                        <label className="block text-sm font-medium mb-2 text-slate-600">Email</label>
                         <input
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                            className="w-full bg-white border border-slate-300 rounded-lg p-3 focus:ring-2 focus:ring-slate-400 outline-none transition-all"
                             placeholder="user@example.com"
                             required
                         />
                     </div>
                     <div>
-                        <label className="block text-sm font-medium mb-2 text-gray-400">Password</label>
+                        <label className="block text-sm font-medium mb-2 text-slate-600">Password</label>
                         <input
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                            className="w-full bg-white border border-slate-300 rounded-lg p-3 focus:ring-2 focus:ring-slate-400 outline-none transition-all"
                             placeholder="user"
                             required
                         />
@@ -59,14 +59,10 @@ export default function LoginForm({ onLoginSuccess }: LoginFormProps) {
                     <button
                         type="submit"
                         disabled={isLoading}
-                        className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-lg transition-colors disabled:opacity-50"
+                        className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 rounded-lg transition-colors disabled:opacity-50"
                     >
                         {isLoading ? 'Signing in...' : 'Sign In'}
                     </button>
-                    <div className="text-xs text-center text-gray-500 mt-4">
-                        <strong>User Access:</strong> Enter any email/password<br />
-                        <strong>Admin Access:</strong> admin@example.com / admin
-                    </div>
                 </form>
             </div>
         </div>

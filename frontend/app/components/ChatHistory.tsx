@@ -47,10 +47,10 @@ export default function ChatHistory({
 
     if (isCollapsed) {
         return (
-            <div className="w-16 bg-gray-900 border-r border-gray-700 flex flex-col items-center py-4">
+            <div className="w-16 bg-slate-50 border-r border-slate-200 flex flex-col items-center py-4">
                 <button
                     onClick={onToggleCollapse}
-                    className="p-3 hover:bg-gray-800 rounded-lg transition-colors mb-4"
+                    className="p-3 hover:bg-slate-200 rounded-lg transition-colors mb-4"
                     title="Expand sidebar"
                 >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -59,7 +59,7 @@ export default function ChatHistory({
                 </button>
                 <button
                     onClick={onNewChat}
-                    className="p-3 hover:bg-gray-800 rounded-lg transition-colors"
+                    className="p-3 hover:bg-slate-200 rounded-lg transition-colors"
                     title="New chat"
                 >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -71,14 +71,14 @@ export default function ChatHistory({
     }
 
     return (
-        <aside className="w-80 bg-gray-900 border-r border-gray-700 flex flex-col transition-all duration-300">
+        <aside className="w-80 bg-slate-50 border-r border-slate-200 flex flex-col transition-all duration-300">
             {/* Header */}
-            <div className="p-4 border-b border-gray-700">
+            <div className="p-4 border-b border-slate-200">
                 <div className="flex items-center justify-between mb-4">
-                    <h2 className="text-lg font-semibold text-blue-400">MedAI Chat</h2>
+                    <h2 className="text-lg font-semibold text-slate-800">MedAI Chat</h2>
                     <button
                         onClick={onToggleCollapse}
-                        className="p-2 hover:bg-gray-800 rounded-lg transition-colors"
+                        className="p-2 hover:bg-slate-200 rounded-lg transition-colors"
                         title="Collapse sidebar"
                     >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,7 +88,7 @@ export default function ChatHistory({
                 </div>
                 <button
                     onClick={onNewChat}
-                    className="w-full bg-blue-600 hover:bg-blue-500 text-white rounded-lg p-3 transition-colors flex items-center justify-center gap-2"
+                    className="w-full bg-slate-900 hover:bg-slate-800 text-white rounded-lg p-3 transition-colors flex items-center justify-center gap-2"
                 >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -110,8 +110,8 @@ export default function ChatHistory({
                             <div
                                 key={conv.id}
                                 className={`group relative rounded-lg transition-colors ${currentConversationId === conv.id
-                                    ? 'bg-gray-800 border border-gray-600'
-                                    : 'hover:bg-gray-800 border border-transparent'
+                                    ? 'bg-white border border-slate-300'
+                                    : 'hover:bg-slate-100 border border-transparent'
                                     }`}
                             >
                                 {editingId === conv.id ? (
@@ -124,18 +124,18 @@ export default function ChatHistory({
                                                 if (e.key === 'Enter') handleSaveEdit(conv.id);
                                                 if (e.key === 'Escape') handleCancelEdit();
                                             }}
-                                            className="flex-1 bg-gray-700 text-white text-sm px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                            className="flex-1 bg-white text-slate-900 text-sm px-2 py-1 rounded border border-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-400"
                                             autoFocus
                                         />
                                         <button
                                             onClick={() => handleSaveEdit(conv.id)}
-                                            className="p-1 hover:bg-gray-700 rounded"
+                                            className="p-1 hover:bg-slate-200 rounded"
                                         >
                                             <Check className="w-4 h-4 text-green-500" />
                                         </button>
                                         <button
                                             onClick={handleCancelEdit}
-                                            className="p-1 hover:bg-gray-700 rounded"
+                                            className="p-1 hover:bg-slate-200 rounded"
                                         >
                                             <X className="w-4 h-4 text-red-500" />
                                         </button>
@@ -146,10 +146,10 @@ export default function ChatHistory({
                                             onClick={() => onSelectConversation(conv.id)}
                                             className="w-full text-left p-3 pr-20"
                                         >
-                                            <div className="text-sm font-medium text-gray-200 truncate">
+                                            <div className="text-sm font-medium text-slate-700 truncate">
                                                 {conv.title}
                                             </div>
-                                            <div className="text-xs text-gray-500 mt-1">
+                                            <div className="text-xs text-slate-500 mt-1">
                                                 {new Date(conv.updated_at).toLocaleDateString()}
                                             </div>
                                         </button>
@@ -159,10 +159,10 @@ export default function ChatHistory({
                                                     e.stopPropagation();
                                                     handleStartEdit(conv);
                                                 }}
-                                                className="p-2 hover:bg-gray-700 rounded transition-colors"
+                                                className="p-2 hover:bg-slate-200 rounded transition-colors"
                                                 title="Rename"
                                             >
-                                                <Edit2 className="w-4 h-4 text-gray-400" />
+                                                <Edit2 className="w-4 h-4 text-slate-500" />
                                             </button>
                                             <button
                                                 onClick={(e) => {
@@ -171,7 +171,7 @@ export default function ChatHistory({
                                                         onDeleteConversation(conv.id);
                                                     }
                                                 }}
-                                                className="p-2 hover:bg-gray-700 rounded transition-colors"
+                                                className="p-2 hover:bg-slate-200 rounded transition-colors"
                                                 title="Delete"
                                             >
                                                 <Trash2 className="w-4 h-4 text-red-400" />
@@ -186,8 +186,8 @@ export default function ChatHistory({
             </div>
 
             {/* Footer */}
-            <div className="p-4 border-t border-gray-700">
-                <div className="text-xs text-gray-500">
+            <div className="p-4 border-t border-slate-200">
+                <div className="text-xs text-slate-500">
                     {conversations.length} conversation{conversations.length !== 1 ? 's' : ''}
                 </div>
             </div>

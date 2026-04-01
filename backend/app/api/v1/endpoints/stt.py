@@ -1,7 +1,9 @@
-from fastapi import APIRouter, UploadFile, File, HTTPException
+from fastapi import APIRouter, UploadFile, File, HTTPException, Depends
 import whisper
 import tempfile
 import os
+from app.auth.deps import get_current_user
+from app.models.user import User
 from langsmith import traceable
 
 router = APIRouter()
@@ -17,7 +19,10 @@ def get_whisper_model():
 
 @router.post("/transcribe")
 @traceable(name="Whisper STT")
-async def transcribe_audio(file: UploadFile = File(...)):
+async def transcribe_audio(
+    file: UploadFile = File(...),
+    current_user: User = Depends(get_current_user)
+):
     if not file.filename.lower().endswith(('.wav', '.mp3', '.m4a', '.flac', '.ogg', '.webm')):
         raise HTTPException(status_code=400, detail="Unsupported file type. Use WAV, MP3, M4A, FLAC, OGG, or WEBM.")
 
