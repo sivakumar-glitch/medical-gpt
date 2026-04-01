@@ -1,0 +1,39 @@
+{
+  "title": "hi",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hi",
+      "timestamp": "2026-04-01T04:38:38.839000Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! How can I help you today?",
+      "timestamp": "2026-04-01T04:38:38.839000Z"
+    },
+    {
+      "role": "user",
+      "content": "today i fell tied what  to do?",
+      "timestamp": "2026-04-01T04:38:38.839000Z"
+    },
+    {
+      "role": "assistant",
+      "content": "1. Listen to your body and rest when you feel tired.2. Drink water and eat a healthy snack to boost your energy.3. Make sure you get enough sleep tonight. 4. If tiredness continues for days or gets worse, talk to your doctor.",
+      "timestamp": "2026-04-01T04:38:38.839000Z"
+    },
+    {
+      "role": "user",
+      "content": "doctor visiting is time waste?",
+      "timestamp": "2026-04-01T04:38:38.839000Z"
+    },
+    {
+      "role": "assistant",
+      "content": "",
+      "timestamp": "2026-04-01T04:38:38.839000Z"
+    }
+  ],
+  "id": "85810925-6679-422d-8a04-7f38cfcc46dd",
+  "user_id": 2,
+  "created_at": "2026-04-01T04:36:44.781148",
+  "updated_at": "2026-04-01T04:38:38.844178"
+}

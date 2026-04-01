@@ -1,0 +1,89 @@
+{
+  "title": "hi",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hi",
+      "timestamp": "2026-02-12T07:23:21.184000Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! How can I help you today?",
+      "timestamp": "2026-02-12T07:23:21.184000Z"
+    },
+    {
+      "role": "user",
+      "content": "today i have stomach pain what to do?",
+      "timestamp": "2026-02-12T07:23:21.184000Z"
+    },
+    {
+      "role": "assistant",
+      "content": "1. Try resting and avoid heavy meals for now, as stomach pain can be caused by many things, including **gastritis** (inflamed stomach lining).2. Drink plenty of water and stick to bland foods, like rice or toast.3. If the pain is severe, or you notice symptoms like vomiting, fever, or blood in stool, seek medical help right away.",
+      "timestamp": "2026-02-12T07:23:21.184000Z"
+    },
+    {
+      "role": "user",
+      "content": "what happen blood pressure increase",
+      "timestamp": "2026-02-12T07:23:21.184000Z"
+    },
+    {
+      "role": "assistant",
+      "content": "1. **High blood pressure** means your heart has to work harder to pump blood.2. Over time, this can damage your **blood vessels** and organs like the heart and kidneys.3. You may not notice symptoms at first, but it increases the risk for serious problems like **heart attack** or **stroke**.",
+      "timestamp": "2026-02-12T07:23:21.184000Z"
+    },
+    {
+      "role": "user",
+      "content": "if a patient unble to breate what is problem?",
+      "timestamp": "2026-02-12T07:23:21.184000Z"
+    },
+    {
+      "role": "assistant",
+      "content": "1. **Airway blockage** – Something may be blocking the throat or windpipe, stopping air from getting to the lungs.2. **Lung problems** – Conditions like asthma, pneumonia, or a collapsed lung can make breathing difficult.3. **Heart problems** – A heart attack or heart failure can also cause trouble breathing.4. This is an emergency. Call for help immediately if someone can't breathe.",
+      "timestamp": "2026-02-12T07:23:21.184000Z"
+    },
+    {
+      "role": "user",
+      "content": "explain in detail",
+      "timestamp": "2026-02-12T07:23:21.184000Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Sure! Here’s a detailed, plain-language explanation of **arrhythmia**:1. **Arrhythmia** means the heart isn’t beating in a normal pattern.2. The heartbeat can be:   - **Too fast** (called tachycardia)   - **Too slow** (called bradycardia)   - **Irregular** (not following a steady rhythm)3. This happens because of a problem with the heart’s electrical signals, which control your heartbeat.4. Some **arrhythmias** are harmless, but others can be serious and need medical attention.",
+      "timestamp": "2026-02-12T07:23:21.184000Z"
+    },
+    {
+      "role": "user",
+      "content": "how heart attack happen?",
+      "timestamp": "2026-02-12T07:23:21.184000Z"
+    },
+    {
+      "role": "assistant",
+      "content": "",
+      "timestamp": "2026-02-12T07:23:21.184000Z"
+    },
+    {
+      "role": "user",
+      "content": "?",
+      "timestamp": "2026-02-12T07:23:21.184000Z"
+    },
+    {
+      "role": "assistant",
+      "content": "It looks like your question was incomplete. Please type out your full question so I can help you!",
+      "timestamp": "2026-02-12T07:23:21.184000Z"
+    },
+    {
+      "role": "user",
+      "content": "how heart attack happen?",
+      "timestamp": "2026-02-12T07:23:21.184000Z"
+    },
+    {
+      "role": "assistant",
+      "content": "",
+      "timestamp": "2026-02-12T07:23:21.184000Z"
+    }
+  ],
+  "id": "310983df-44d0-435e-8e5a-33eb034fe3f4",
+  "user_id": 2,
+  "created_at": "2026-02-12T07:19:57.114126",
+  "updated_at": "2026-04-01T04:35:32.294949"
+}

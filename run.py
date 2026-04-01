@@ -5,9 +5,8 @@ run.py  –  Build & start backend (FastAPI/Uvicorn) + frontend (Next.js) in
 Usage:
     python run.py
 
-Press Ctrl+C to stop both servers.
+Press +CtrlC to stop both servers.
 """
-
 import os
 import sys
 import shutil

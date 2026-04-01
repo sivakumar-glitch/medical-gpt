@@ -1,0 +1,49 @@
+{
+  "title": "hi",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hi",
+      "timestamp": "2026-04-01T05:26:05.760000Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! How can I help you today?",
+      "timestamp": "2026-04-01T05:26:05.760000Z"
+    },
+    {
+      "role": "user",
+      "content": "how to help people suddden heart attack?",
+      "timestamp": "2026-04-01T05:26:05.760000Z"
+    },
+    {
+      "role": "assistant",
+      "content": "EMERGENCY: These symptoms could indicate a heart attack. Please call 911 or go to the nearest emergency room IMMEDIATELY.",
+      "timestamp": "2026-04-01T05:26:05.760000Z"
+    },
+    {
+      "role": "user",
+      "content": "i want how to help",
+      "timestamp": "2026-04-01T05:26:05.760000Z"
+    },
+    {
+      "role": "assistant",
+      "content": "It sounds like you want to help someone but aren't sure how. Here are some simple tips:1. Ask how they are feeling and listen to them.2. Offer practical support, like helping with errands or chores.3. Encourage them to talk to a doctor or counselor if needed.If you’re unsure what kind of help is needed, it's okay to ask directly.",
+      "timestamp": "2026-04-01T05:26:05.760000Z"
+    },
+    {
+      "role": "user",
+      "content": "symptombs of heart attack",
+      "timestamp": "2026-04-01T05:26:05.760000Z"
+    },
+    {
+      "role": "assistant",
+      "content": "",
+      "timestamp": "2026-04-01T05:26:05.760000Z"
+    }
+  ],
+  "id": "87ecdabe-6866-40bf-be3c-2e0543d51918",
+  "user_id": 2,
+  "created_at": "2026-04-01T05:24:49.131596",
+  "updated_at": "2026-04-01T05:26:05.764142"
+}
