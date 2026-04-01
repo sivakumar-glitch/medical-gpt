@@ -1,0 +1,19 @@
+{
+  "title": "hi",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hi",
+      "timestamp": "2026-04-01T11:36:23.882000Z"
+    },
+    {
+      "role": "assistant",
+      "content": "",
+      "timestamp": "2026-04-01T11:36:23.882000Z"
+    }
+  ],
+  "id": "4074eea3-c471-4004-8759-26ec68b7ea11",
+  "user_id": 2,
+  "created_at": "2026-04-01T11:36:20.655557",
+  "updated_at": "2026-04-01T11:36:23.890656"
+}
