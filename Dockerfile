@@ -2,6 +2,8 @@ FROM python:3.10-slim
 
 WORKDIR /app/backend
 
+# Render deploy note: this root Dockerfile lets Render build from repository root.
+
 # System dependencies required by some Python packages and Whisper.
 RUN apt-get update && apt-get install -y \
     build-essential \
