@@ -5,7 +5,7 @@ run.py  –  Build & start backend (FastAPI/Uvicorn) + frontend (Next.js) in
 Usage:
     python run.py
 
-Press +CtrlC to stop both servers.
+Press Ctrl+C to stop both servers.
 """
 import os
 import sys
@@ -29,20 +29,21 @@ def stream_output(proc: subprocess.Popen, label: str) -> None:
         print(f"[{label}] {line.decode('utf-8', errors='replace').rstrip()}", flush=True)
 
 
-def run_step(label: str, cmd: list, cwd: str) -> None:
-    """Run a blocking subprocess and stream its output; raise on failure."""
+def run_step(label: str, cmd: list, cwd: str) -> tuple[int, str]:
+    """Run a blocking subprocess and stream its output."""
     print(f"\n[run.py] {label} …")
     proc = subprocess.Popen(
         cmd, cwd=cwd,
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
     )
+    output_lines: list[str] = []
     for line in iter(proc.stdout.readline, b""):
-        print(f"[{label.lower()}] {line.decode('utf-8', errors='replace').rstrip()}", flush=True)
+        decoded = line.decode('utf-8', errors='replace').rstrip()
+        output_lines.append(decoded)
+        print(f"[{label.lower()}] {decoded}", flush=True)
     proc.wait()
-    if proc.returncode != 0:
-        print(f"[run.py] ERROR: '{' '.join(cmd)}' exited with code {proc.returncode}")
-        sys.exit(proc.returncode)
+    return proc.returncode, "\n".join(output_lines)
 
 
 def clean_next_cache() -> None:
@@ -91,7 +92,22 @@ def main() -> None:
     clean_next_cache()
 
     # ── 2. Build Next.js for production ──────────────────────────────────────
-    run_step("Building frontend", [NPM, "run", "build"], FRONTEND_DIR)
+    code, build_output = run_step("Building frontend", [NPM, "run", "build"], FRONTEND_DIR)
+    if code != 0:
+        lower = build_output.lower()
+        transient_next_errors = (
+            "pages-manifest.json" in lower or
+            "readlink" in lower or
+            "einval" in lower or
+            "enoent" in lower
+        )
+        if transient_next_errors:
+            print("[run.py] Detected transient Next.js build artifact error; retrying once …")
+            clean_next_cache()
+            code, _ = run_step("Rebuilding frontend", [NPM, "run", "build"], FRONTEND_DIR)
+        if code != 0:
+            print(f"[run.py] ERROR: '{NPM} run build' failed after retry.")
+            sys.exit(code)
 
     # ── 3. Launch both servers concurrently ──────────────────────────────────
     backend  = start_backend()

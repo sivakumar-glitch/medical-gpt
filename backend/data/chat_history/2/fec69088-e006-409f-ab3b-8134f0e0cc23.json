@@ -4,36 +4,46 @@
     {
       "role": "user",
       "content": "hi",
-      "timestamp": "2026-04-01T05:43:30.366000Z"
+      "timestamp": "2026-04-02T04:28:11.982000Z"
     },
     {
       "role": "assistant",
       "content": "Failed to fetch",
-      "timestamp": "2026-04-01T05:43:30.366000Z"
+      "timestamp": "2026-04-02T04:28:11.982000Z"
     },
     {
       "role": "user",
       "content": "hi",
-      "timestamp": "2026-04-01T05:43:30.366000Z"
+      "timestamp": "2026-04-02T04:28:11.982000Z"
     },
     {
       "role": "assistant",
       "content": "Hello! How can I help you today?",
-      "timestamp": "2026-04-01T05:43:30.366000Z"
+      "timestamp": "2026-04-02T04:28:11.982000Z"
     },
     {
       "role": "user",
       "content": "my friend have sudden heart pain what first aid to do ?",
-      "timestamp": "2026-04-01T05:43:30.366000Z"
+      "timestamp": "2026-04-02T04:28:11.982000Z"
     },
     {
       "role": "assistant",
       "content": "",
-      "timestamp": "2026-04-01T05:43:30.366000Z"
+      "timestamp": "2026-04-02T04:28:11.982000Z"
+    },
+    {
+      "role": "user",
+      "content": "hi",
+      "timestamp": "2026-04-02T04:28:11.982000Z"
+    },
+    {
+      "role": "assistant",
+      "content": "",
+      "timestamp": "2026-04-02T04:28:11.982000Z"
     }
   ],
   "id": "fec69088-e006-409f-ab3b-8134f0e0cc23",
   "user_id": 2,
   "created_at": "2026-04-01T05:42:44.138022",
-  "updated_at": "2026-04-01T05:43:30.369862"
+  "updated_at": "2026-04-02T04:28:11.993905"
 }
